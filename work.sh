@@ -60,9 +60,27 @@ if ! open_app_fullscreen "Cursor" "$CURSOR_PROJECT_PATH"; then
     exit 1
 fi
 
+# 4. Open Messenger app
+log_info "💬 Step 4: Opening Messenger app..."
+if ! open -a "Messenger"; then
+    log_error "Failed to open Messenger app"
+    exit 1
+fi
+log_info "✅ Messenger app opened"
+
+# 5. Open Zalo app
+log_info "📱 Step 5: Opening Zalo app..."
+if ! open -a "Zalo"; then
+    log_error "Failed to open Zalo app"
+    exit 1
+fi
+log_info "✅ Zalo app opened"
+
 # Script completion
 log_info "✅ Work routine completed successfully!"
 log_info "📊 Summary:"
 log_info "  - Chrome opened in full screen"
 log_info "  - ${#WORK_URLS_ARRAY[@]} work tabs opened"
 log_info "  - Cursor opened with project in full screen"
+log_info "  - Messenger app opened"
+log_info "  - Zalo app opened"
